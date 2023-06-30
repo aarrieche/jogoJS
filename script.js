@@ -40,11 +40,11 @@
             let larguraTela = window.innerWidth;
         
             if (contador >= 0 && contador <= 4) {
-                return larguraTela * 0.004;
-            } else if (contador >= 5 && contador <= 7) {
                 return larguraTela * 0.006;
-            } else if (contador >= 8 && contador <= 11) {
+            } else if (contador >= 5 && contador <= 7) {
                 return larguraTela * 0.008;
+            } else if (contador >= 8 && contador <= 11) {
+                return larguraTela * 0.009;
             } else {
                 return 0;
             }
@@ -81,9 +81,10 @@
         
             if (ehGalvao === true) {
                 document.getElementById("fisica").play();
-                alturaPulo = 0.1 * window.innerHeight; // Utiliza a altura da janela para calcular a altura do pulo
+                alturaPulo = 0.1 * window.innerWidth;
             } else {
-                alturaPulo = 0.3 * window.innerHeight; // Utiliza a altura da janela para calcular a altura do pulo
+                alturaPulo = 0.12 * window.innerWidth;
+                console.log(window.innerWidth);
             }
         
             let alturaMaxima = div1Top - alturaPulo;
