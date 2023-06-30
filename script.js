@@ -81,7 +81,7 @@
         
             if (ehGalvao === true) {
                 document.getElementById("fisica").play();
-                alturaPulo = 0.1 * window.innerWidth;
+                alturaPulo = 0.01 * window.innerWidth;
             } else {
                 alturaPulo = 0.12 * window.innerWidth;
                 console.log(window.innerWidth);
