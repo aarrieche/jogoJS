@@ -37,16 +37,19 @@
         }
 
         function obterVelocidade() {
+            let larguraTela = window.innerWidth;
+        
             if (contador >= 0 && contador <= 4) {
-                return 15;
+                return larguraTela * 0.004;
             } else if (contador >= 5 && contador <= 7) {
-                return 20;
+                return larguraTela * 0.006;
             } else if (contador >= 8 && contador <= 11) {
-                return 25;
+                return larguraTela * 0.008;
             } else {
                 return 0;
             }
         }
+        
 
         function trocar() {
             reiniciarJogo();
@@ -69,32 +72,33 @@
 
         function pulo() {
             if (pulando) {
-                return; 
+                return;
             }
         
-            pulando = true; 
+            pulando = true;
             let div1Top = parseInt(getComputedStyle(div1).top);
             let alturaPulo;
-
+        
             if (ehGalvao === true) {
                 document.getElementById("fisica").play();
-                alturaPulo = 50;
+                alturaPulo = 0.1 * window.innerHeight; // Utiliza a altura da janela para calcular a altura do pulo
             } else {
-                alturaPulo = 250;
+                alturaPulo = 0.3 * window.innerHeight; // Utiliza a altura da janela para calcular a altura do pulo
             }
-
+        
             let alturaMaxima = div1Top - alturaPulo;
             let puloInterval = setInterval(() => {
                 div1.style.top = div1Top - 10 + 'px';
                 document.getElementById("somPulo").play();
                 div1Top = parseInt(getComputedStyle(div1).top);
-
+        
                 if (div1Top <= alturaMaxima) {
                     clearInterval(puloInterval);
                     descer();
                 }
             }, 15);
         }
+        
 
         function descer() {
             let div1Top = parseInt(getComputedStyle(div1).top);
