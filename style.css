@@ -1,0 +1,131 @@
+body{
+    background-color: darkolivegreen;
+}
+
+
+.fundo {
+    position: absolute;
+    top: 1vw;
+    left: 1vw;
+    width: 98vw;
+    height: 20vw;
+    background-image: url("fundo.jpg");
+    background-size: cover;
+    text-align: center;
+}
+
+#venceu {
+font-size: 70px;
+background-color: green; 
+color: white; 
+}
+
+#contador {
+font-size: 30px;
+background-color: green;
+color: white; 
+}
+
+#pulo {
+padding: 20px 40px; 
+font-size: 30px;
+background-color: green; 
+color: white; 
+transition: background-color 0.5s; 
+}
+
+#pulo:active {
+background-color: white; 
+color: green; 
+transition: background-color 0.5s, color 0.5s; 
+}
+
+#reiniciar, #trocar, #iniciar,a{
+padding: 10px 20px; 
+font-size: 15px;
+background-color: rgb(118, 139, 118); 
+color: white; 
+transition: background-color 0.5s;
+}
+
+.painel {
+position: absolute;
+top: 22vw; 
+left:10vw; 
+height: 10vw;
+width: 59vw;
+text-align: center;
+
+}  
+#div2 {
+position: absolute; 
+top: 15vw; 
+right: 5vw; 
+width: 3vw; 
+height: 5vw; 
+background-color: rgba(94, 28, 216, 0); 
+text-align: center;
+}
+#div1 {
+position: absolute;
+top: 15vw;
+left: 35vw; 
+width: 5vw; 
+height: 5vw; 
+background-color: rgba(0, 128, 0, 0); 
+text-align: center;
+}
+
+.card {
+    width: 400px;
+    margin: 0 auto;
+    padding: 40px;
+    text-align: center;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  #iniciar {
+    padding: 20px 40px;
+    font-size: 30px;
+    background-color: green;
+    color: white;
+    transition: background-color 0.5s;
+    text-decoration: none; 
+    display: block; 
+    margin: 0 auto; 
+    margin-top: 20px; 
+    border-radius: 5px;
+  }
+  
+  #iniciar:active {
+    background-color: white;
+    color: green;
+    transition: background-color 0.5s, color 0.5s;
+  }
+  
+  .card-image-wrapper {
+    display: flex; 
+    justify-content: center; 
+    margin-bottom: 20px; 
+  }
+  
+  .card-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: lightgray;
+    margin: 0 10px; 
+  }
+  
+  .card-title {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  
+  .card-players {
+    font-size: 18px;
+    color: gray;
+    margin-bottom: 10px;
+  }
