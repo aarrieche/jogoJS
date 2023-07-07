@@ -63,13 +63,13 @@
             let newImage;
 
             if (currentImage.includes("neymar")) {
-                newImage = "imagens/futebol-imagem-animada-0093.gif";
+                newImage = "futebol-imagem-animada-0093.gif";
                 ehGalvao = false;
             } else if (currentImage.includes("futebol-imagem-animada-0093.gif")) {
-                newImage = "imagens/galvao.gif";
+                newImage = "galvao.gif";
                 ehGalvao = true;
             } else {
-                newImage = "imagens/neymar.png";
+                newImage = "neymar.png";
                 ehGalvao = false;
             }
 
@@ -85,7 +85,7 @@
         
             let vel;
 
-            if (window.innerWidth < 400) {
+            if (window.innerWidth < 600) {
             vel = 2; 
             } else {
              vel = 10; 
@@ -121,7 +121,7 @@
             let vel;
             
 
-            if (window.innerWidth < 400) {
+            if (window.innerWidth < 600) {
             vel = 3; 
             } else {
              vel = 10; 
