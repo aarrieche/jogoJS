@@ -6,7 +6,7 @@
         let m = setInterval("mover()", 15);
         let n = setInterval("colisao()", 5);
         
-
+        console.log("começou");
 
         function mover() {
             let div2Left = parseInt(getComputedStyle(div2).right);
