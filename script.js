@@ -1,6 +1,12 @@
         let div2 = document.getElementById("div2");
         let div1 = document.getElementById("div1");
         let pulando = false; 
+        let contador = 0;
+        let ehGalvao = false;
+        let m = setInterval("mover()", 15);
+        let n = setInterval("colisao()", 5);
+        
+
 
         function mover() {
             let div2Left = parseInt(getComputedStyle(div2).right);
@@ -57,13 +63,13 @@
             let newImage;
 
             if (currentImage.includes("neymar")) {
-                newImage = "futebol-imagem-animada-0093.gif";
+                newImage = "imagens/futebol-imagem-animada-0093.gif";
                 ehGalvao = false;
             } else if (currentImage.includes("futebol-imagem-animada-0093.gif")) {
-                newImage = "galvao.gif";
+                newImage = "imagens/galvao.gif";
                 ehGalvao = true;
             } else {
-                newImage = "neymar.png";
+                newImage = "imagens/neymar.png";
                 ehGalvao = false;
             }
 
@@ -71,10 +77,19 @@
         }
 
         function pulo() {
+
+
             if (pulando) {
                 return;
             }
         
+            let vel;
+
+            if (window.innerWidth < 400) {
+            vel = 2; 
+            } else {
+             vel = 10; 
+            }
             pulando = true;
             let div1Top = parseInt(getComputedStyle(div1).top);
             let alturaPulo;
@@ -85,11 +100,12 @@
             } else {
                 alturaPulo = 0.12 * window.innerWidth;
                 console.log(window.innerWidth);
+                
             }
         
             let alturaMaxima = div1Top - alturaPulo;
             let puloInterval = setInterval(() => {
-                div1.style.top = div1Top - 10 + 'px';
+                div1.style.top = div1Top - vel + 'px';
                 document.getElementById("somPulo").play();
                 div1Top = parseInt(getComputedStyle(div1).top);
         
@@ -102,12 +118,24 @@
         
 
         function descer() {
+            let vel;
+            
+
+            if (window.innerWidth < 400) {
+            vel = 3; 
+            } else {
+             vel = 10; 
+            }
+
+            console.log(vel);
             let div1Top = parseInt(getComputedStyle(div1).top);
             let fundoHeight = parseInt(getComputedStyle(fundo).height);
             let div1Height = parseInt(getComputedStyle(div1).height);
 
+            
+
             let descidaInterval = setInterval(() => {
-                div1.style.top = div1Top + 15 + 'px';
+                div1.style.top = div1Top + vel + 'px';
                 div1Top = parseInt(getComputedStyle(div1).top);
 
                 if (div1Top + div1Height >= fundoHeight) {
@@ -182,10 +210,6 @@
         }
 
        
-        let contador = 0;
-        let ehGalvao = false;
-        let m = setInterval("mover()", 15);
-        let n = setInterval("colisao()", 5);
         document.querySelector("#pulo").addEventListener("click", pulo);
         document.querySelector("#reiniciar").addEventListener("click", reiniciarJogo);
         document.querySelector("#trocar").addEventListener("click", trocar);
